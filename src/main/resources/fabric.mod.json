@@ -18,6 +18,9 @@
     ],
     "main": [
       "net.creeperdev.noCombatElytra.NoCombatElytra"
+    ],
+    "modmenu" : [
+      "net.creeperdev.noCombatElytra.client.ModMenu"
     ]
   },
   "mixins": [
