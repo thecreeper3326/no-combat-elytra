@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "no-combat-elytra",
+  "version": "${version}",
+  "name": "no-combat-elytra",
+  "description": "Disable elytra in combat",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.creeperdev.noCombatElytra.client.NoCombatElytraDataGenerator"
+    ],
+    "client": [
+      "net.creeperdev.noCombatElytra.client.NoCombatElytraClient"
+    ],
+    "main": [
+      "net.creeperdev.noCombatElytra.NoCombatElytra"
+    ],
+    "modmenu" : [
+      "net.creeperdev.noCombatElytra.client.ModMenu"
+    ]
+  },
+  "mixins": [
+    "no-combat-elytra.mixins.json",
+    {
+      "config": "no-combat-elytra.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "~${minecraft_version}"
+  }
+}
