@@ -13,4 +13,5 @@ Configurations:
 - Message: custom message to show during cooldown
   - Use `%T` to express amount of ticks left in cooldown
   - Use `%S` to express amount of seconds left in cooldown (rounded ticks/20)
+
 Configuration powered by FigManager 2.2 embedded
