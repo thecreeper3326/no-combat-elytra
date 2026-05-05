@@ -39,6 +39,12 @@ public class NoCombatElytra implements ModInitializer {
                 int time = 0;
                 CustomData cd = player.get(DataComponents.CUSTOM_DATA);
                 try {
+                    CompoundTag n = cd.copyTag();
+                    if (!n.contains("time_since_combat")) {
+                        n.putInt("time_since_combat", f.cooldown.value + 1);
+                        player.setComponent(DataComponents.CUSTOM_DATA, CustomData.of(n));
+                        break;
+                    }
                     if (cd.copyTag().getInt("time_since_combat").isPresent()) {
                         time = cd.copyTag().getInt("time_since_combat").get();
                     }
