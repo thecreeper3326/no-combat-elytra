@@ -1,9 +1,9 @@
 package net.creeperdev.noCombatElytra;
 
-import net.creeperdev.figManager.FigManager;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.johnseagull.figManagerMC.FigManagerMC;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -25,16 +25,16 @@ import java.util.UUID;
 
 public class NoCombatElytra implements ModInitializer {
     public static String figManagerName = "no_combat_elytra";
-    public static String projectVersion = "1.0";
+    public static String projectVersion = "1.1";
     @Override
     public void onInitialize() {
-        FigManager e = new FigManager();
+        FigManagerMC e = new FigManagerMC();
         e.init(figManagerName,projectVersion,Figs.instance);
 
 
 
         ServerTickEvents.END_SERVER_TICK.register((server) -> {
-            Figs f = (Figs) FigManager.FIGS;
+            Figs f = (Figs) FigManagerMC.FIGS;
             for (ServerPlayer player : server.getPlayerList().getPlayers()) {
                 int time = 0;
                 CustomData cd = player.get(DataComponents.CUSTOM_DATA);

@@ -9,11 +9,8 @@ buildscript {
         classpath 'com.gradleup.shadow:shadow-gradle-plugin:9.4.1'
     }
 }
-
-
-
 plugins {
-    id 'fabric-loom' version '1.14.10'
+    id 'net.fabricmc.fabric-loom-remap' version '1.14-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -30,7 +27,7 @@ tasks.named('shadowJar', ShadowJar) {
         project.configurations.shadowMe.collect { it.isDirectory() ? it : zipTree(it) }
     }
     archiveClassifier = 's'
-    relocate 'net.creeperdev.figManager', "net.creeperdev.${project.archives_base_name}.libs.figManager"
+    relocate 'net.johnseagull.figManager', "net.johnseagull.${project.archives_base_name}.libs.figManager"
     mergeServiceFiles()
 }
 version = project.mod_version
@@ -72,13 +69,14 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modCompileOnly("net.creeperdev:figmanager:${project.fig_version}") {
+
+    modImplementation("net.johnseagull:figmanager-1-21-11:${project.fig_version}:dev") {
         transitive = false
     }
-    modRuntimeOnly("net.creeperdev:figmanager:${project.fig_version}:dev") {
+    modCompileOnly("net.johnseagull:figmanager-1-21-11:${project.fig_version}") {
         transitive = false
     }
-    shadowMe("net.creeperdev:figmanager:${project.fig_version}") {
+    shadowMe("net.johnseagull:figmanager-1-21-11:${project.fig_version}") {
         exclude group: "net.fabricmc.fabric-api"
         exclude group: "net.fabricmc"
     }
@@ -100,7 +98,7 @@ processResources {
     }
 }
 configurations.all {
-    resolutionStrategy.force "net.creeperdev:figmanager:${project.fig_version}:dev"
+    resolutionStrategy.force "net.johnseagull:figmanager-1-21-11:${project.fig_version}:dev"
 }
 def targetJavaVersion = 21
 tasks.withType(JavaCompile).configureEach {

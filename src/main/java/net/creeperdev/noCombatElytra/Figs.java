@@ -2,7 +2,7 @@ package net.creeperdev.noCombatElytra;
 
 
 
-import net.creeperdev.figManager.Fig.*;
+import net.johnseagull.figManager.Fig.*;
 import net.minecraft.ChatFormatting;
 
 

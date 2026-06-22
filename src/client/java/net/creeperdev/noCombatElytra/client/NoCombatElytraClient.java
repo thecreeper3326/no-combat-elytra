@@ -1,9 +1,8 @@
 package net.creeperdev.noCombatElytra.client;
 
-import net.creeperdev.figManagerClient.FigManagerClient;
-import net.creeperdev.figManager.FigManager;
 import net.creeperdev.noCombatElytra.Figs;
 import net.fabricmc.api.ClientModInitializer;
+import net.johnseagull.figManagerClient.FigManagerClient;
 
 public class NoCombatElytraClient implements ClientModInitializer {
 
