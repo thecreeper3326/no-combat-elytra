@@ -1,9 +1,8 @@
-package net.creeperdev.noCombatElytra;
+package johnseagull.noCombatElytra;
 
 
 
-import net.creeperdev.figManager.Fig.*;
-import net.minecraft.ChatFormatting;
+import johnseagull.figManager.Fig.*;
 
 
 public class Figs {

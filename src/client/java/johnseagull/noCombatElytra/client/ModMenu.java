@@ -1,15 +1,15 @@
-package net.creeperdev.noCombatElytra.client;
+package johnseagull.noCombatElytra.client;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
-import net.creeperdev.figManager.FigManager;
-import net.creeperdev.figManagerClient.FigScreen;
+import johnseagull.figManager.FigManager;
+import johnseagull.figManagerClient.FigScreen;
 import net.minecraft.network.chat.Component;
 
 public class ModMenu implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return p -> new FigScreen<>(Component.literal(""), 0.5f, FigManager.FIGS, p);
+        return p -> new FigScreen<>(Component.literal(""), 0.5f, FigManager.FIGS, p, true);
     }
 }
 

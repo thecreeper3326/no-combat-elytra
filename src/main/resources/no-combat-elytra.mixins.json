@@ -1,8 +1,8 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.creeperdev.noCombatElytra.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "package": "johnseagull.noCombatElytra.mixin",
+  "compatibilityLevel": "JAVA_25",
   "mixins": [
     "LivingEntityMixin"
   ],
